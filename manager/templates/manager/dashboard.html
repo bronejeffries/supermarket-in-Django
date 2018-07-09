@@ -1,0 +1,287 @@
+{% extends 'manager/managerbase.html'%}
+
+{% block Dashboard_active %}active{% endblock %}
+
+{% block page_brand %}Dashboard{% endblock %}
+
+{% block body %}
+
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header card-header-warning card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">content_copy</i>
+        </div>
+        <p class="card-category">Current month sales</p>
+        <h3 class="card-title">2.222M
+          <small>USH</small>
+        </h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons text-danger">warning</i>
+          <a href="#pablo">Get More Space...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header card-header-success card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">store</i>
+        </div>
+        <p class="card-category">Revenue</p>
+        <h3 class="card-title">$34,245</h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">date_range</i> Last 24 Hours
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header card-header-danger card-header-icon">
+        <div class="card-icon">
+          <i class="material-icons">info_outline</i>
+        </div>
+        <p class="card-category"> expenses</p>
+        <h3 class="card-title">100,000</h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">local_offer</i> Tracked from Github
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header card-header-info card-header-icon">
+        <div class="card-icon">
+          <i class="fa fa-twitter"></i>
+        </div>
+        <p class="card-category">Monthly purchases</p>
+        <h3 class="card-title">2.0M
+            <small>USH</small>
+        </h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">update</i> Just Updated
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-success">
+        <div class="ct-chart" id="dailySalesChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Daily Sales</h4>
+        <p class="card-category">
+          <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">access_time</i> updated 4 minutes ago
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-warning">
+        <div class="ct-chart" id="websiteViewsChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Monthly Sales</h4>
+        <p class="card-category">
+          <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+      </p>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">access_time</i> campaign sent 2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-danger">
+        <div class="ct-chart" id="completedTasksChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Annual Sales</h4>
+        <p class="card-category">
+            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+        </p>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">access_time</i> campaign sent 2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+      <div class="col-lg-6 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Tasks</h4>
+                  <p class="card-category">Tasks as per date</p>
+                </div>
+
+                <div class="card-body">
+                  <!-- <div class="tab-content"> -->
+                    <!-- <div class="tab-pane active" id="profile"> -->
+
+                      <ul id="myUL" class="todo_list" >
+                        <li>Hit the gym</li>
+                        <li>Pay bills</li>
+                        <li >Meet George</li>
+                        <li>Buy eggs</li>
+                        <li>Read a book</li>
+                        <li>Organize office</li>
+                      </ul>
+                      <form class="form">
+                        <div class="input-group border">
+                          <input type="text" value="" id="Task" class="form-control" placeholder="Add New TasK">
+                          <button type="submit" class="btn btn-info btn-round btn-just-icon">
+                            <i class="material-icons">add</i>
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
+                      </form>
+                    <!-- </div> -->
+      <!-- </div> -->
+      </div>
+
+              </div>
+            </div>
+
+
+  <div class="col-lg-6 col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+
+        <h4 class="card-title">Employees Stats</h4>
+        <p class="card-category">All employees as per date</p>
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-hover">
+          <thead class="text-primary">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>point of work</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dakota Rice</td>
+              <td>$36,738</td>
+              <td>shop</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Minerva Hooper</td>
+              <td>$23,789</td>
+              <td>shop</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Sage Rodriguez</td>
+              <td>$56,142</td>
+              <td>pump</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Philip Chaney</td>
+              <td>$38,735</td>
+              <td>pump</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button  class="btn btn-warning pull-right" onclick="showaddEmployee()">Add new employee</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row bg-primary">
+<div class=" col-md-12" id="addEmployee">
+
+        <div class="card bg-primary  ">
+          <div class="card-header  card-header-primary emp">
+            <span rel="tooltip" title="Close" class=" pull-right btn btn-danger" onclick="closeadd(this)">&times</span>
+            <h4 class="card-title">ADD NEW EMPLOYEE</h4>
+            <p class="card-category">please add required fields</p>
+            <div class="card-body">
+
+              <form>
+
+                                              <div class="row">
+                                                <div class="col-md-6">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Fist Name</label>
+                                                    <input type="text" class="form-control">
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Last Name</label>
+                                                    <input type="text" class="form-control">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-12">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Address</label>
+                                                    <input type="text" class="form-control">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-4">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Contact</label>
+                                                    <input type="tel" class="form-control">
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Country</label>
+                                                    <input type="text" class="form-control">
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                  <div class="form-group">
+                                                    <label class="bmd-label-floating">Salary(USH)</label>
+                                                    <input type="number" class="form-control">
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <button type="submit" class="btn btn-success pull-right">Add</button>
+                                              <div class="clearfix"></div>
+                                            </form>
+
+            </div>
+          </div>
+
+        </div>
+
+</div>
+</div>
+
+{% endblock%}

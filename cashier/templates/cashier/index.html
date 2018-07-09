@@ -1,0 +1,120 @@
+{% extends 'cashier/base.html' %}
+
+{% block dashboard_active %}active{% endblock %}
+
+{% block page_brand %}Shop Sales Point{% endblock %}
+
+{% block body %}
+<div class="row">
+
+<div class="col-md-6" id="sales_rt">
+  <div class="card">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title ">Shop Sales</h4>
+      <p class="card-category">Sales Table</p>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <form action="/cashier/add_sales/" method="post" >
+          {% csrf_token %}
+        <table class="table" id="sales_table">
+          <thead class=" text-primary">
+            <th>
+              ID
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Cost
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              TOTAL
+            </th>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <button type="submit" rel="tooltip" title="Confirm Sale" class="btn pull-right btn-success btn-link btn-sm">
+                      <i class="material-icons">done</i>
+          </button>
+          </form>
+        <div class="btn btn-primary pull-right" id="sales_total">TOTAL</div>
+        <div class="clearfix"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+   <div class="card">
+     <div class="card-header card-header-primary">
+       <h4 class="card-title pull-left ">Shop Sales</h4>
+       <form class="navbar-form pull-right">
+          <div class="input-group no-border">
+            <input type="text" value="" id="search_input" onkeyup = " mysearch('search_input','items_table',1) " class="form-control" placeholder="Search for item...">
+            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <i class="material-icons">search</i>
+              <div class="ripple-container"></div>
+            </button>
+          </div>
+        </form>
+     </div>
+     <div class="card-body">
+       <div class="table-responsive">
+         <table class="table" id="items_table">
+           <thead class=" text-primary">
+             <th>
+               No.
+             </th>
+             <th>
+               Name
+             </th>
+             <th>
+                Price
+             </th>
+             <th>
+                Available
+             </th>
+
+           </thead>
+           <tbody>
+             {%if products%}
+
+                {%for product in products%}
+                    <tr>
+                      <td>
+                        {{forloop.counter}}
+                      </td>
+                      <td>
+                        {{product.name}}
+                      </td>
+                      <td>
+                        {{product.selling_price}}
+                      </td>
+                      <td>
+                        {{product.available_quantity}}
+                      </td>
+                    </tr>
+                {%endfor%}
+
+             {%endif%}
+           </tbody>
+         </table>
+
+         <div class="clearfix"></div>
+
+       </div>
+     </div>
+
+   </div>
+ <!-- {{st}} -->
+</div>
+
+</div>
+{% endblock %}

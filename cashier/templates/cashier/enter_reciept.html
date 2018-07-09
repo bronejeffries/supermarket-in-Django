@@ -1,0 +1,123 @@
+{% extends 'cashier/base.html' %}
+
+{% block Reciept_active %} active {% endblock %}
+
+{% block page_brand %}Reciepts{% endblock %}
+
+{% block body %}
+
+<div class="row">
+
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Enter New Reciept</h4>
+        <p class="card-category">For new items use the add item button</p>
+      </div>
+      <div class="card-body">
+        <div class="clearfix"></div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-info">
+
+              <th>
+                item
+              </th>
+              <th>
+                Cost Price
+              </th>
+              <th>
+                Quantity(pcs)
+              </th>
+              <th>
+
+            </th>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>
+                  <input list="items_available" type="text" name="item" id="" placeholder="add item name">
+                  <datalist id="items_available">
+                        {%if products%}
+                           {%for product in products%}
+                           <option value="{{product.name}}">
+                           {%endfor%}
+                        {%endif%}
+                    </datalist>
+                </td>
+                <td>
+                  <input type="number" name="cost" id="">
+                </td>
+                <td>
+                  <input type="number" name="quanity" id="">
+                </td>
+                <td class="text-primary">
+                  <button type="submit" rel="tooltip" onclick="add_to_reciept(this)" title="Add To Reciept" class="btn pull-right btn-success btn-link btn-sm">
+                                <i class="material-icons">done</i>
+                    </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+        <a href="add_item/"><button class="btn btn-warning"><i class="material-icons">add</i>Add New Item</button></a>
+        <div class="clearfix"></div>
+  </div>
+
+</div>
+<div class="row">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title ">View New Reciept</h4>
+          <p class="card-category">Verify and Confirm</p>
+        </div>
+        <div class="card-body">
+          <form class="" action="" method="post">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-success pull-right" rel="tooltip" title="Confirm Reciept"><i class="material-icons">done</i>Confirm Reciept</button>
+            <div class="clearfix"></div>
+
+            <div class="table-responsive">
+              <table class="table" id="reciept_view">
+                <thead class=" text-info">
+
+                  <th>
+                    item
+                  </th>
+                  <th>
+                    Cost Price
+                  </th>
+                  <th>
+                    Quantity(pcs)
+                  </th>
+                  <th>
+                      TOTAL
+                </th>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+              <button class="btn  pull-right" id="reciept_total" rel="tooltip" title="Reciept Total"></button>
+              <div class="clearfix"></div>
+            </div>
+
+          </form>
+
+
+        </div>
+        {{req}}
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'cashier/base.html' %}
+
+{% block Reciept_active %} active {% endblock %}
+
+{% block page_brand %}Add New Item{% endblock %}
+
+{% block body %}
+
+<div class="row">
+                      <div class="col-md-12">
+                        <div class="card">
+                          <div class="card-header card-header-primary">
+                            <h4 class="card-title">ADD NEW ITEM</h4>
+                            <p class="card-category">ADD</p>
+                          </div>
+                          <div class="card-body">
+                            <form action="" method="post">
+                              {% csrf_token %}
+                              <div class="row">
+
+                                <div class="col-md-5">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">ITEM NAME</label>
+                                    <input type="text" name="item_name" class="form-control" required>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">SELLING PRICE</label>
+                                    <input type="number" name="item_selling_price" class="form-control" required>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">COST PRICE</label>
+                                    <input type="number" name="item_cost_price" class="form-control" required>
+                                  </div>
+                                </div>
+
+                              </div>
+
+
+
+                              <button type="submit" class="btn btn-success pull-right">ADD</button>
+                              <div class="clearfix"></div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+{% endblock %}

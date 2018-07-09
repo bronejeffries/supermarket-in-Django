@@ -1,0 +1,414 @@
+
+{% extends 'manager/managerbase.html'%}
+
+{% block managecashiers_active %}active{% endblock %}
+{% block page_brand %}Manage Cashiers' Accounts{% endblock %}
+{% block body %}
+
+<div class="row">
+       <div class="col-lg-12 col-md-12">
+         <div class="card">
+           <div class="card-header card-header-tabs card-header-primary">
+             <div class="nav-tabs-navigation">
+               <div class="nav-tabs-wrapper" >
+                 <ul class="nav nav-tabs" data-tabs="tabs">
+                   <li class="nav-item">
+                     <a class="nav-link active" href="#profile-cashier1" data-toggle="tab">
+                       <i class="material-icons">person</i> Cashier1
+                       <div class="ripple-container"></div>
+                     </a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#profile-cashier2" data-toggle="tab">
+                       <i class="material-icons">person</i> Cashier2
+                       <div class="ripple-container"></div>
+                     </a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#profile-cashier3" data-toggle="tab">
+                       <i class="material-icons">person</i> Cashier3
+                       <div class="ripple-container"></div>
+                     </a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#profile-cashier4" data-toggle="tab">
+                       <i class="material-icons">person</i> Another Cashier
+                       <div class="ripple-container"></div>
+                     </a>
+                   </li>
+                   <li class="nav-item pull-right">
+                     <a class="nav-link" href="#add-cashier" data-toggle="tab">
+                       <i class="material-icons">add</i> Add New Cashier
+                       <div class="ripple-container"></div>
+                     </a>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+           <div class="card-body">
+             <div class="tab-content">
+               <div class="tab-pane active" id="profile-cashier1">
+
+                 <div class="card-body">
+                   <form>
+                     <div class="row">
+
+                       <div class="col-md-3">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Username</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Email address</label>
+                           <input type="email" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Fist Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Last Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-12">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Adress</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">City</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Country</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Contact</label>
+                           <input type="double" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-danger pull-right"><i class="material-icons">delete</i>Delete Cashier1</button>
+                     <div class="clearfix"></div>
+                   </form>
+                 </div>
+
+               </div>
+               <div class="tab-pane" id="profile-cashier2">
+                 <div class="card-body">
+                   <form>
+                     <div class="row">
+
+                       <div class="col-md-3">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Username</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Email address</label>
+                           <input type="email" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Fist Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Last Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-12">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Adress</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">City</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Country</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Contact</label>
+                           <input type="double" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-danger pull-right"><i class="material-icons">delete</i>Delete Cashier2</button>
+                     <div class="clearfix"></div>
+                   </form>
+                 </div>
+               </div>
+
+               <div class="tab-pane" id="profile-cashier3">
+
+                 <div class="card-body">
+                   <form>
+                     <div class="row">
+
+                       <div class="col-md-3">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Username</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Email address</label>
+                           <input type="email" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Fist Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Last Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-12">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Adress</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">City</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Country</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Contact</label>
+                           <input type="double" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-danger pull-right"><i class="material-icons">delete</i>Delete Cashier3</button>
+                     <div class="clearfix"></div>
+                   </form>
+                 </div>
+
+               </div>
+               <div class="tab-pane" id="profile-cashier4">
+
+                 <div class="card-body">
+                   <form>
+                     <div class="row">
+
+                       <div class="col-md-3">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Username</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Email address</label>
+                           <input type="email" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Fist Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Last Name</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-12">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Adress</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">City</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Country</label>
+                           <input type="text" class="form-control" disabled>
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Contact</label>
+                           <input type="double" class="form-control" disabled>
+                         </div>
+                       </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-danger pull-right"><i class="material-icons">delete</i>Delete Cashier4</button>
+                     <div class="clearfix"></div>
+                   </form>
+                 </div>
+
+               </div>
+               <div class="tab-pane" id="add-cashier">
+
+                 <div class="card-body">
+                   <form>
+                     <div class="row">
+
+                       <div class="col-md-3">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Username</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Email address</label>
+                           <input type="email" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Fist Name</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Last Name</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-12">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Adress</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">City</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Country</label>
+                           <input type="text" class="form-control">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Contact</label>
+                           <input type="double" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+
+                     <div class="row">
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Set password</label>
+                           <input type="password" class="form-control">
+                         </div>
+                       </div>
+
+                       <div class="col-md-4">
+                         <div class="form-group">
+                           <label class="bmd-label-floating">Verify password</label>
+                           <input type="password" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-success pull-right"><i class="material-icons">add</i>Add new cashier</button>
+                     <div class="clearfix"></div>
+                   </form>
+                 </div>
+
+               </div>
+
+             </div>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+{% endblock%}

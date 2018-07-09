@@ -1,0 +1,74 @@
+{% extends 'cashier/base.html' %}
+
+{% block Expenses_active %}active{% endblock %}
+
+{% block page_brand %}Expenses And Damages {% endblock %}
+
+{% block body %}
+
+<div class="row">
+
+  <div class="col-md-11">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Enter New Reciept</h4>
+        <p class="card-category">For new items use the add item button</p>
+      </div>
+      <div class="card-body">
+        <div class="clearfix"></div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-info">
+
+              <th>
+                item
+              </th>
+              <th>
+                Reason
+              </th>
+              <th class="Amount" id="amount">
+                Amount
+              </th>
+              <th class="expiry" id="Expiry">
+                Expiry Date
+            </th>
+            <th>
+
+            </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="text" name="item_name" id="" placeholder="add item name" class="form-control">
+                </td>
+                <td>
+
+                <label for="expense">Expense</label>  <input type="radio" name="Reason" id="expense" onclick="clickExpenses()" >
+                <label for="expiry">Expiry</label>  <input type="radio" name="Reason" id="expiry" onclick="clickExpiry()">
+
+                </td>
+
+                <td id="amount-expense">
+                  <input type="number" name="Amount-expense" class="form-control">
+                </td>
+                <td id="expiry-date">
+                  <input type="date" name="Expiry-date" class="form-control" >
+                </td>
+                <td>
+                  <button type="submit" rel="tooltip" title="Add" class="btn pull-right btn-success  btn-sm">
+                                <i class="material-icons">done</i>Add
+                    </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock%}
