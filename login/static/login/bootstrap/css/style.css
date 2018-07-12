@@ -1,0 +1,110 @@
+/* Your custom styles */
+.bg {
+    background-image: url("../img/back1.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.profile-img {
+    width: 120px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+}
+.profileimg {
+    width: 100px;
+    height: 70px;
+    margin: 0 auto 10px;
+    display: block;
+}
+.account-wall {
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #ffffff;
+    -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+}
+.container {
+    padding: 40px 200px 50px 200px;   
+}
+.radio-pink [type="radio"]:checked+label:after {
+    border-color: #e91e63;
+    background-color: #e91e63;
+}
+
+<!--radiobuttoncss-->
+.example{
+  margin-bottom : 1.5em;
+}
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+}
+
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  border-radius    : 0.25em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
+}
+
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : rgb(129, 8, 204);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(129, 8, 204);
+  font-weight : bold;
+}
+
+input[type=radio]:not(old):checked +  label > span > span{
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.125em;
+  border           : 0.0625em solid rgb(129, 8, 204);
+  border-radius    : 0.125em;
+  background       : rgb(153,204,102);
+  background-image :    -moz-linear-gradient(rgb(129, 8, 204),rgb(129, 8, 204));
+  background-image :     -ms-linear-gradient(rgb(129, 8, 204),rgb(129, 8, 204));
+  background-image :      -o-linear-gradient(rgb(129, 8, 204),rgb(129, 8, 204));
+  background-image : -webkit-linear-gradient(rgb(129, 8, 204),rgb(129, 8, 204));
+  background-image :         linear-gradient(rgb(129, 8, 204),rgb(129, 8, 204));
+}

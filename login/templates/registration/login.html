@@ -1,0 +1,47 @@
+
+{% extends "login/base.html" %}
+{% block content %}
+    <div class="bg">
+        <div class="container">
+                        <h3 class="#4a148c; text-center mb-4">Sign in</h3>
+                        <div class="account-wall">
+                        <form action="" method="post">
+                          {% csrf_token %}
+                                <h4 class="#4a148c; text-center mb-4">Login As</h4>
+                                <!--Radio group-->
+                                <div class="example text-center">
+                                  <div>
+                                    <input id="radio109" type="radio" name="radio" value="cashier" checked>
+                                    <label for="radio109"><span><span></span></span>Cashier</label>
+
+                                    <input id="radio110" type="radio" name="radio" value="manager">
+                                    <label for="radio110"><span><span></span></span>Manager</label>
+                                  </div>
+                                </div>
+
+                                 <div class="modal-body mx-3">
+                                    <span style="color:red;" rel='tooltip'>{{context}}</span> <br>                
+                                    <div class="md-form mb-5">
+
+                                        <i class="fa fa-envelope prefix grey-text"></i>
+
+                                        <input type="text" id="username" name="username" placeholder="your username" required autofocus>
+
+                                    </div>
+                                    <div class="md-form mb-4">
+                                        <i class="fa fa-lock prefix grey-text"></i>
+                                        <input type="password" id="defaultForm-pass"  name="password" placeholder="password" required >
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer d-flex justify-content-center">
+
+                                    <button class="btn #9933CC #4a148c purple darken-4" name="Result">Login</button>
+                                </div>
+                        </form>
+                            <p class="text-center new-account">powered by
+                        </div>
+        </div>
+    </div>
+{% endblock content %}

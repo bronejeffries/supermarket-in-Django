@@ -23,5 +23,4 @@ class Purchases(models.Model):
     quantity_purchased = models.IntegerField()
     date_of_purchase = models.DateField(auto_now_add=True)
 
-class Expenses(models.Model):
-    item_name
+# class Expenses(models.Model):

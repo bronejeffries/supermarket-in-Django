@@ -20,8 +20,8 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons text-danger">warning</i>
-          <a href="#pablo">Get More Space...</a>
+          <!-- <i class="material-icons text-danger">warning</i> -->
+          <!-- <a href="#pablo">Get More Space...</a> -->
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons">date_range</i> Last 24 Hours
+          <!-- <i class="material-icons">date_range</i> Last 24 Hours -->
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons">local_offer</i> Tracked from Github
+          <!-- <i class="material-icons">local_offer</i> Tracked from Github -->
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons">update</i> Just Updated
+          <!-- <i class="material-icons">update</i> Just Updated -->
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons">access_time</i> updated 4 minutes ago
+          <!-- <i class="material-icons">access_time</i> updated 4 minutes ago -->
         </div>
       </div>
     </div>
@@ -145,16 +145,20 @@
                     <!-- <div class="tab-pane active" id="profile"> -->
 
                       <ul id="myUL" class="todo_list" >
-                        <li>Hit the gym</li>
+                        {%for task in Currenttasks %}
+                            <li>{{task}}</li>
+                        {%endfor%}
+                        <!-- <li>Hit the gym</li>
                         <li>Pay bills</li>
                         <li >Meet George</li>
                         <li>Buy eggs</li>
                         <li>Read a book</li>
-                        <li>Organize office</li>
+                        <li>Organize office</li> -->
                       </ul>
-                      <form class="form">
+                      <form class="form" action="{% url 'manager:addTask' %}" method="post">
                         <div class="input-group border">
-                          <input type="text" value="" id="Task" class="form-control" placeholder="Add New TasK">
+                          {%csrf_token%}
+                          <input type="text" name="task" id="Task" class="form-control" placeholder="Add New TasK">
                           <button type="submit" class="btn btn-info btn-round btn-just-icon">
                             <i class="material-icons">add</i>
                             <div class="ripple-container"></div>
@@ -185,13 +189,21 @@
             <th>point of work</th>
           </thead>
           <tbody>
-            <tr>
+            <!-- <tr>
               <td>1</td>
               <td>Dakota Rice</td>
               <td>$36,738</td>
               <td>shop</td>
-            </tr>
+            </tr> -->
+            {%for employee in Employees %}
             <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{employee}}</td>
+              <td>{{employee.Salary}}UGX</td>
+              <td>shop</td>
+            </tr>
+            {%endfor%}
+            <!-- <tr>
               <td>2</td>
               <td>Minerva Hooper</td>
               <td>$23,789</td>
@@ -208,7 +220,7 @@
               <td>Philip Chaney</td>
               <td>$38,735</td>
               <td>pump</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
 
@@ -227,19 +239,19 @@
             <p class="card-category">please add required fields</p>
             <div class="card-body">
 
-              <form>
-
+              <form action="{%url 'manager:addEmployee'%}" method="post">
+                    {% csrf_token %}
                                               <div class="row">
                                                 <div class="col-md-6">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Fist Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="First_Name" class="form-control">
                                                   </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Last Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="Last_Name" class="form-control">
                                                   </div>
                                                 </div>
                                               </div>
@@ -247,7 +259,7 @@
                                                 <div class="col-md-12">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Address</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="Address" class="form-control">
                                                   </div>
                                                 </div>
                                               </div>
@@ -255,19 +267,19 @@
                                                 <div class="col-md-4">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Contact</label>
-                                                    <input type="tel" class="form-control">
+                                                    <input type="tel" name="Contact" class="form-control">
                                                   </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Country</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="Country" class="form-control">
                                                   </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                   <div class="form-group">
                                                     <label class="bmd-label-floating">Salary(USH)</label>
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" name="Salary" class="form-control">
                                                   </div>
                                                 </div>
                                               </div>

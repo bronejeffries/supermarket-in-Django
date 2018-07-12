@@ -12,9 +12,9 @@ class Employee(models.Model):
     def __str__(self):
         return self.First_Name +' '+ self.Last_Name
 
-class Cashier(Employee):
-    password =  models.CharField(max_length = 250)
-    username = models.CharField(max_length = 250)
+# class Cashier(Employee):
+#     password =  models.CharField(max_length = 250)
+#     username = models.CharField(max_length = 250)
 
 class Tasks(models.Model):
     Task =  models.CharField(max_length = 250)

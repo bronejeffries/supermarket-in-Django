@@ -4,9 +4,11 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import Products , Sales , Purchases
 from datetime import date
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def index(request):
 
     products = Products.objects.all()
@@ -14,6 +16,7 @@ def index(request):
     # return render(request, '')
     return render(request,'cashier/index.html',{ 'products' : products})
 
+@login_required
 def enter_reciept(request):
     if request.method!='GET':
             prod = Products.objects.all()
@@ -44,15 +47,15 @@ def enter_reciept(request):
         prod = Products.objects.all()
         return render(request,'cashier/enter_reciept.html',{'products':prod})
 
-
+@login_required
 def expenses(request):
     if request.method=='GET':
         return render(request,'cashier/expenses.html')
     else:
-        
+
         return HttpResponseRedirect(reverse('cashier:expenses'))
 
-
+@login_required
 def add_sales(request):
     if request.method!='GET':
         # prod = Products.objects.all()
@@ -78,6 +81,7 @@ def add_sales(request):
         # return render(request,'cashier/index.html',{'products':prod ,'st': st})
         return HttpResponseRedirect(reverse('cashier:index',))
 
+@login_required
 def add_item(request):
     if request.method=='GET':
         return render(request,'cashier/add_item.html')

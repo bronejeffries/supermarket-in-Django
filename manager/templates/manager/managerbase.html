@@ -68,8 +68,8 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <i class="material-icons">add</i>
+              <p>Others</p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">
@@ -113,7 +113,7 @@
                   </p>
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" hidden>
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
@@ -134,6 +134,14 @@
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     Account
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login:logout' %}" >
+                  <i class="material-icons">arrow_forward</i>
+                  <p class="d-lg-none d-md-block">
+                    Logout
                   </p>
                 </a>
               </li>

@@ -10,5 +10,9 @@ urlpatterns = [
     url(r'^user/$',views.user_profile,name='user_profile'),
     url(r'^managecashiers/$',views.managecashiers,name='manage_cashiers'),
     url(r'^transaction/$',views.transaction,name='transaction'),
+    url(r'^addtask/$',views.addtask,name='addTask'),
+    url(r'^addEmployee/$',views.addEmployee,name='addEmployee'),
+
+
 
 ]

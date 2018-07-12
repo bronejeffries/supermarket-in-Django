@@ -19,5 +19,6 @@ from django.conf.urls import include, url
 urlpatterns = [
     url(r'^cashier/', include('cashier.urls')),
     url(r'^manager/',include('manager.urls')),
+    url(r'^',include('login.urls')),
     url(r'^admin/', admin.site.urls),
 ]
