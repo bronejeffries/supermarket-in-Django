@@ -22,5 +22,6 @@ class Purchases(models.Model):
     Cost_price = models.IntegerField()
     quantity_purchased = models.IntegerField()
     date_of_purchase = models.DateField(auto_now_add=True)
+    total = models.IntegerField(default=0)
 
 # class Expenses(models.Model):

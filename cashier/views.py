@@ -35,10 +35,11 @@ def enter_reciept(request):
                 try:
                     selected_product_purchase = product.purchases_set.get(date_of_purchase=today)
                 except (KeyError, Purchases.DoesNotExist):
-                    product.purchases_set.create(Cost_price = item_cost_price[i],quantity_purchased = item_quantity[i])
+                    product.purchases_set.create(Cost_price = item_cost_price[i],quantity_purchased = item_quantity[i],total=(item_cost_price[i]* item_quantity[i]))
                 else:
                     selected_product_purchase.quantity_purchased = int(selected_product_purchase.quantity_purchased) + int(item_quantity[i])
                     selected_product_purchase.item_cost_price = int(item_cost_price[i])
+                    selected_product_purchase.total += (int(item_quantity[i])*int(item_cost_price[i]))
                     selected_product_purchase.save()
             # return HttpResponseRedirect(reverse('cashier:enter_reciept'))
             return render(request,'cashier/enter_reciept.html',{'products':prod, 'req':req})
