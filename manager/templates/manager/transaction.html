@@ -56,38 +56,17 @@
                   <th></th>
                 </thead>
                 <tbody>
+                  {% for sale in sales_per_month%}
                   <tr>
-                    <td>1</td>
-                    <td>January-2018</td>
-                    <td>$36,738</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{sale.month}}</td>
+                    <td>UGX {{sale.total_sales}}</td>
                     <td>
                       <button class="btn btn-success">View Sales Details</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>February-2018</td>
-                    <td>$23,789</td>
-                    <td>
-                      <button class="btn btn-success">View Sales Details</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>March-2018</td>
-                    <td>$56,142</td>
-                    <td>
-                      <button class="btn btn-success">View Sales Details</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>May-2018</td>
-                    <td>$38,735</td>
-                    <td>
-                      <button class="btn btn-success">View Sales Details</button>
-                    </td>
-                  </tr>
+                  {%endfor%}
+
                 </tbody>
               </table>
             </div>
@@ -111,38 +90,17 @@
                   <th></th>
                 </thead>
                 <tbody>
+                  {% for Purchase in purchases_per_month %}
                   <tr>
-                    <td>1</td>
-                    <td>January-2018</td>
-                    <td>$36,738</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{Purchase.month}}</td>
+                    <td>UGX {{Purchase.total_purchases}}</td>
                     <td>
                       <button class="btn btn-success">View Purchases Details</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>February-2018</td>
-                    <td>$23,789</td>
-                    <td>
-                      <button class="btn btn-success">View Purchases Details</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>March-2018</td>
-                    <td>$56,142</td>
-                    <td>
-                      <button class="btn btn-success">View Purchases Details</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>May-2018</td>
-                    <td>$38,735</td>
-                    <td>
-                      <button class="btn btn-success">View Purchases Details</button>
-                    </td>
-                  </tr>
+                  {%endfor%}
+
                 </tbody>
               </table>
             </div>

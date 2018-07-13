@@ -4,6 +4,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 from .models import Tasks, Employee
+from cashier.models import Products , Sales , Purchases
+from django.db.models import Count , Sum , Avg
+from django.db.models.functions import TruncMonth, TruncYear
 # Create your views here.
 @login_required
 def index(request):
@@ -22,7 +25,10 @@ def managecashiers(request):
 
 @login_required
 def transaction(request):
-    return render(request,'manager/transaction.html')
+    sales_per_month = Sales.objects.annotate(month=TruncMonth('date_of_sale')).values('month').annotate(total_sales=Sum('total_amount'))
+    purchases_per_month = Purchases.objects.annotate(month=TruncMonth('date_of_purchase')).values('month').annotate(total_purchases=Sum('total'))
+    print(purchases_per_month)
+    return render(request,'manager/transaction.html',{'sales_per_month':sales_per_month, 'purchases_per_month':purchases_per_month})
 
 @login_required
 def addtask(request):
