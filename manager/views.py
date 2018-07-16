@@ -10,25 +10,29 @@ from django.db.models.functions import TruncMonth, TruncYear
 # Create your views here.
 @login_required
 def index(request):
+    username = request.session['username']
     Currenttasks = Tasks.objects.all()
     Employees = Employee.objects.all()
-    return render(request,'manager/dashboard.html',{'Currenttasks':Currenttasks, 'Employees':Employees})
+    return render(request,'manager/dashboard.html',{'Currenttasks':Currenttasks, 'Employees':Employees,'username':username})
 
 @login_required
 def user_profile(request):
-    return render(request,'manager/user_profile.html')
+    username = request.session['username']
+    return render(request,'manager/user_profile.html',{'username':username})
 
 @login_required
 def managecashiers(request):
+    username = request.session['username']
     users = User.objects.all()
-    return render(request,'manager/managecashiers.html',{'users':users})
+    return render(request,'manager/managecashiers.html',{'users':users,'username':username})
 
 @login_required
 def transaction(request):
+    username = request.session['username']
     sales_per_month = Sales.objects.annotate(month=TruncMonth('date_of_sale')).values('month').annotate(total_sales=Sum('total_amount'))
     purchases_per_month = Purchases.objects.annotate(month=TruncMonth('date_of_purchase')).values('month').annotate(total_purchases=Sum('total'))
     print(purchases_per_month)
-    return render(request,'manager/transaction.html',{'sales_per_month':sales_per_month, 'purchases_per_month':purchases_per_month})
+    return render(request,'manager/transaction.html',{'sales_per_month':sales_per_month, 'purchases_per_month':purchases_per_month,'username':username})
 
 @login_required
 def addtask(request):
@@ -52,3 +56,8 @@ def addEmployee(request):
         newEmployee.save()
 
         return HttpResponseRedirect(reverse('manager:index'))
+
+@login_required
+def deleteTask(request, taskId):
+    Tasks.objects.get(id=taskId).delete()
+    return HttpResponseRedirect(reverse('manager:index'))

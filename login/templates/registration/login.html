@@ -20,7 +20,15 @@
                                 </div>
 
                                  <div class="modal-body mx-3">
-                                    <span style="color:red;" rel='tooltip'>{{context}}</span> <br>                
+                                   {% if messages %}
+                                   <ul class="messages">
+                                       {% for message in messages %}
+                                       <span {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:red;" rel='tooltip'>{{ message }}</span> <br>
+                                      
+                                       {% endfor %}
+                                   </ul>
+                                   {% endif %}
+
                                     <div class="md-form mb-5">
 
                                         <i class="fa fa-envelope prefix grey-text"></i>

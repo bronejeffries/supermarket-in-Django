@@ -12,12 +12,13 @@ from django.contrib.auth.decorators import login_required
 def index(request):
 
     products = Products.objects.all()
-
+    username = request.session['username']
     # return render(request, '')
-    return render(request,'cashier/index.html',{ 'products' : products})
+    return render(request,'cashier/index.html',{ 'products' : products, 'username':username})
 
 @login_required
 def enter_reciept(request):
+    username = request.session['username']
     if request.method!='GET':
             prod = Products.objects.all()
             item_name = request.POST.getlist('item_name')
@@ -42,22 +43,24 @@ def enter_reciept(request):
                     selected_product_purchase.total += (int(item_quantity[i])*int(item_cost_price[i]))
                     selected_product_purchase.save()
             # return HttpResponseRedirect(reverse('cashier:enter_reciept'))
-            return render(request,'cashier/enter_reciept.html',{'products':prod, 'req':req})
+            return render(request,'cashier/enter_reciept.html',{'products':prod, 'req':req,'username':username})
 
     else:
         prod = Products.objects.all()
-        return render(request,'cashier/enter_reciept.html',{'products':prod})
+        return render(request,'cashier/enter_reciept.html',{'products':prod,'username':username})
 
 @login_required
 def expenses(request):
+    username = request.session['username']
     if request.method=='GET':
-        return render(request,'cashier/expenses.html')
+        return render(request,'cashier/expenses.html',{'username':username})
     else:
 
         return HttpResponseRedirect(reverse('cashier:expenses'))
 
 @login_required
 def add_sales(request):
+
     if request.method!='GET':
         # prod = Products.objects.all()
         item = request.POST.getlist('item')
@@ -84,8 +87,9 @@ def add_sales(request):
 
 @login_required
 def add_item(request):
+    username = request.session['username']
     if request.method=='GET':
-        return render(request,'cashier/add_item.html')
+        return render(request,'cashier/add_item.html',{'username':username})
 
     else:
         newItem = Products()

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, Group
 from django.urls import reverse
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 
 
@@ -16,17 +17,24 @@ def user_login(request):
 
         try:
             user = authenticate(request, username=username, password=password)
+            if (user is None):
+                # context['error'] = ""
+                messages.error(request, 'invalid credentials please try again')
+                # return HttpResponseRedirect(reverse('login:login'))
+                return render(request, "registration/login.html", { 'messages':messages})
         except Exception:
-            context['error'] = "invalid credentials please try again"
-            # return HttpResponseRedirect(reverse('login:login'))
-            return render(request, "registration/login.html", {'context': context})
+                context['error'] = "invalid credentials please try again"
+                # return HttpResponseRedirect(reverse('login:login'))
+                return render(request, "registration/login.html", {'context': context})
         else:
             try:
                 getgroupobject = Group.objects.get(name = radio)
                 group_1 = user.groups.get(id = getgroupobject.id)
             except Exception:
-                context['error'] = "Choose the right button please..."
-                return render(request, "registration/login.html", {'context':context['error'] })
+
+                messages.error(request, 'Choose the right button please...')
+                # return HttpResponseRedirect(reverse('login:login'))
+                return render(request, "registration/login.html", {'messages':messages})
             else:
                 if user:
                     if getgroupobject.name == 'cashier':
