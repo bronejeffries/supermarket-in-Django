@@ -1,0 +1,80 @@
+{% extends 'manager/managerbase.html'%}
+
+{% block body%}
+
+<div class="row">
+                      <div class="col-md-12">
+
+                        {% if messages %}
+                        <ul class="messages">
+
+                            <span style="color:red;" rel='tooltip'>{{ messages }}</span> <br>
+
+
+                        </ul>
+                        {% endif %}
+
+                        <div class="card">
+                          <div class="card-header card-header-success ">
+                            <h4 class="card-title">Manage Stock</h4>
+                            <div class="card-category">
+                              <form method="post" action="">
+                                {%csrf_token%}
+                                <div class="row">
+                                  <div class="col-md-5">
+                                    <div class="form-group">
+                                      <label class="bmd-label text-primary">From:</label>
+                                      <input type="date" class="form-control"  name="from" required autofocus>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-5">
+                                    <div class="form-group">
+                                      <label class="bmd-label text-primary">To:</label>
+                                      <input type="date" class="form-control" name="to" required>
+                                    </div>
+                                  </div>
+                                      <button type="submit" class="btn btn-info pull-right">Search</button>
+                                </div>
+
+                                <div class="clearfix"></div>
+                              </form>
+                            </div>
+                          </div>
+                          <div class="card-body table-responsive">
+                            {%if items %}
+                            <form class="navbar-form">
+                              <div class="input-group no-border">
+                                <input type="text" value="" id="stock_search" onkeyup = " mysearch('stock_search','stock_table',1)" class="form-control col-lg-2 col-md-4" placeholder="Search by Name...">
+                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                  <i class="material-icons">search</i>
+                                  <div class="ripple-container"></div>
+                                </button>
+                              </div>
+                            </form>
+                            <table class="table table-hover" id="stock_table">
+                              <thead class="text-warning">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Selling Price</th>
+                                <th>Available Quantity</th>
+                              </thead>
+                              <tbody>
+                                {% for item in items%}
+                                <tr>
+                                  <td>{{forloop.counter}}</td>
+                                  <td>{{item.name}}</td>
+                                  <td>UGX{{item.selling_price}}</td>
+                                  <td>{{item.available_quantity}}</td>
+                                </tr>
+                                {%endfor%}
+
+                              </tbody>
+                            </table>
+                            {%endif%}
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+{% endblock %}

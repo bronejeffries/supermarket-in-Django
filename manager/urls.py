@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^transaction/$',views.transaction,name='transaction'),
     url(r'^addtask/$',views.addtask,name='addTask'),
     url(r'^addEmployee/$',views.addEmployee,name='addEmployee'),
+    url(r'^managestock/$',views.managestock,name='managestock'),
     url(r'^delete/(?P<taskId>[0-9]+)/$',views.deleteTask,name='deleteTask'),
 
 

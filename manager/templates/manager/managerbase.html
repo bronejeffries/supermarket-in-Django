@@ -59,6 +59,12 @@
               <p>Transactions</p>
             </a>
           </li>
+          <li class="nav-item {% block managestock_active %}{% endblock %} ">
+            <a class="nav-link" href="/manager/managestock">
+              <i class="material-icons">content_copy</i>
+              <p>Manage Stock</p>
+            </a>
+          </li>
 
           <!-- <li class="nav-item ">
             <a class="nav-link" href="manager/reports">
@@ -200,6 +206,7 @@
   <script src="{% static 'cashier/javascript/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
   <script src="{% static 'cashier/javascript/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
   <script src="{% static 'manager/javascript/managerjavascript.js' %}"></script>
+  <script src="{% static 'cashier/javascript/core/cashierjavascript.js' %}"></script>
   <!-- Chartist JS -->
   <script src="{% static 'cashier/javascript/plugins/chartist.min.js' %}"></script>
   <!--  Notifications Plugin    -->
