@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import Products , Sales , Purchases
 from datetime import date
+
+from .functions.cashierfunctions import functions
 from django.contrib.auth.decorators import login_required
 
 
@@ -36,7 +38,7 @@ def enter_reciept(request):
                 try:
                     selected_product_purchase = product.purchases_set.get(date_of_purchase=today)
                 except (KeyError, Purchases.DoesNotExist):
-                    product.purchases_set.create(Cost_price = item_cost_price[i],quantity_purchased = item_quantity[i],total=(item_cost_price[i]* item_quantity[i]))
+                    product.purchases_set.create(Cost_price = int(item_cost_price[i]),quantity_purchased = int(item_quantity[i]),total=(int(item_cost_price[i])* int(item_quantity[i])))
                 else:
                     selected_product_purchase.quantity_purchased = int(selected_product_purchase.quantity_purchased) + int(item_quantity[i])
                     selected_product_purchase.item_cost_price = int(item_cost_price[i])
@@ -92,9 +94,13 @@ def add_item(request):
         return render(request,'cashier/add_item.html',{'username':username})
 
     else:
-        newItem = Products()
-        newItem.name= request.POST['item_name']
-        newItem.selling_price= request.POST['item_selling_price']
-        newItem.available_quantity = 0
-        newItem.save()
-        return HttpResponseRedirect(reverse('cashier:enter_reciept'))
+        newItem = functions.addnewitem(request.POST['item_name'],request.POST['item_selling_price'])
+        if newItem:
+            return HttpResponseRedirect(reverse('cashier:enter_reciept'))
+
+
+@login_required
+def uploadcsvfile(request):
+    uploadedfile= request.FILES['uploadedcsvfile']
+    functions.handle_uploaded_file(uploadedfile)
+    return HttpResponseRedirect(reverse('cashier:add_item'))

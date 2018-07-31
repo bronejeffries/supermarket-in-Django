@@ -1,0 +1,9 @@
+#amount , #Expiry , #amount-expense , #expiry-date{
+  display: none;
+}
+
+#upload-invisible{
+  position: absolute;
+  left: 50px;
+  display: none;
+}

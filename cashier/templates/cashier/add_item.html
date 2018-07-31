@@ -49,6 +49,22 @@
                           </div>
                         </div>
                       </div>
+
+                    <div class="col-md-4">
+                      <button class="btn btn-success pull-right" onclick="showupload()">Import from CSV</button>
+                      <div class="clearfix"></div>
+                      <div id="upload-invisible" >
+                        <form action="{% url 'cashier:uploadedfile'%}" method="post" enctype="multipart/form-data">
+                          <!-- <div class="form-group"> -->
+                          {% csrf_token %}
+                            UPLOAD (data should be arrangend in <strong>name,selling price,available quantity</strong> order)
+                            <input type="file" name="uploadedcsvfile"  required>
+                            <button type="submit" class="btn btn-success btn-sm">upload</button>
+                            <div class="clearfix"></div>
+                          <!-- </div> -->
+                        </form>
+                      </div>
                     </div>
+      </div>
 
 {% endblock %}

@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^expenses/$',views.expenses, name='expenses'),
     url(r'^add_sales/$',views.add_sales, name='add_sales'),
     url(r'^enter_reciept/add_item/$',views.add_item, name='add_item'),
+    url(r'^add_item/uploadcsvfile$',views.uploadcsvfile, name='uploadedfile'),
 
 ]

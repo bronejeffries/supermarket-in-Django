@@ -158,7 +158,9 @@ for (var i = 1; i < rows.length; i++) {
         total_amount_btn.innerHTML = reciepttotal;
 }
 
-
+function showupload(){
+  document.getElementById('upload-invisible').style.display="block";
+}
 
 //  setInterval(function () {
 //    var reciept_table = document.getElementById('reciept_view');
